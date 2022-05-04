@@ -40,7 +40,9 @@ function App() {
     // update the allGoblins array immutably to this new, smaller array
     const index = allGoblins.findIndex((goblin) => goblin.name === name);
 
-    console.log(index);
+    allGoblins.splice(index, 1);
+
+    setAllGoblins([...allGoblins]);
   }
 
   function handleFilterGoblins(search) {
