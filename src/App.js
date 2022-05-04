@@ -60,6 +60,7 @@ function App() {
 
   useEffect(() => {
     handleFilterGoblins(search);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [search, allGoblins]);
 
   return (
@@ -80,7 +81,6 @@ function App() {
           value={search}
           onChange={(e) => {
             setSearch(e.target.value);
-            // handleFilterGoblins(e.target.value);
           }}
         />
       </div>
