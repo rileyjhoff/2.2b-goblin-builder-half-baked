@@ -80,7 +80,7 @@ function App() {
           value={search}
           onChange={(e) => {
             setSearch(e.target.value);
-            handleFilterGoblins(e.target.value);
+            // handleFilterGoblins(e.target.value);
           }}
         />
       </div>
