@@ -49,6 +49,7 @@ function App() {
       const includedGoblins = allGoblins.filter((goblin) =>
         goblin.name.toLowerCase().includes(search.toLowerCase())
       );
+      setFilteredGoblins([...includedGoblins]);
     } else {
       setFilteredGoblins([...allGoblins]);
     }
