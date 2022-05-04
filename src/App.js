@@ -59,14 +59,11 @@ function App() {
     <div className="App">
       <div className="current-goblin quarter">
         <Goblin
-          goblin={
-            {
-              /*
-            use the goblin form state to make a goblin object and to display it.
-            This will let the user see the current form state
+          /*
+          use the goblin form state to make a goblin object and to display it.
+          This will let the user see the current form state
           */
-            }
-          }
+          goblin={{}}
         />
       </div>
       <div className="goblin-filter quarter">
@@ -88,7 +85,7 @@ function App() {
         */
       />
       <GoblinList
-        goblins={[]} // this takes in an array of goblins. If the filteredGoblins has a length, use that array. Otherwise, use the allGoblins array
+        goblins={filteredGoblins.length > 0 ? [filteredGoblins] : [allGoblins]} // this takes in an array of goblins. If the filteredGoblins has a length, use that array. Otherwise, use the allGoblins array
         handleDeleteGoblin={handleDeleteGoblin} // note that the goblin list has access to the ability to delete
       />
     </div>
