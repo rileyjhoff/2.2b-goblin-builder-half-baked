@@ -36,6 +36,9 @@ function App() {
     // find the index of the goblin in allGoblins with this name
     // use splice to delete the goblin object at this index
     // update the allGoblins array immutably to this new, smaller array
+    const index = allGoblins.findIndex((goblin) => goblin.name === name);
+
+    console.log(index);
   }
 
   function handleFilterGoblins(search) {
