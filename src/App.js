@@ -2,7 +2,7 @@ import './App.css';
 import GoblinForm from './GoblinForm';
 import GoblinList from './GoblinList';
 import Goblin from './Goblin';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function App() {
   /* 
@@ -27,7 +27,6 @@ function App() {
     // update the allGoblins array. Add the new goblin to the allGoblins array immutably.
     allGoblins.push(newGoblin);
     setAllGoblins([...allGoblins]);
-    setFilteredGoblins([...allGoblins]);
     // clear out the goblin form state items by setting them to empty strings. This will cause the form to reset in the UI.
     setGoblinFormName('');
     setGoblinFormHP('');
@@ -58,6 +57,10 @@ function App() {
       setFilteredGoblins([...allGoblins]);
     }
   }
+
+  useEffect(() => {
+    handleFilterGoblins(search);
+  }, [search, allGoblins]);
 
   return (
     <div className="App">
