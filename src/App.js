@@ -42,6 +42,13 @@ function App() {
     // use the filter method to get an array of goblins whose name includes this search argument
     // if there is a search argument, set the filtered goblins to the filtered goblins
     // if the search argument is undefined, set the filtered goblins in state to just be the array of all goblins
+    if (search) {
+      const includedGoblins = allGoblins.filter((goblin) =>
+        goblin.name.toLowerCase().includes(search.toLowerCase())
+      );
+    } else {
+      setFilteredGoblins([...allGoblins]);
+    }
   }
 
   return (
